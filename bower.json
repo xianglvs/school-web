@@ -1,0 +1,18 @@
+{
+  "name": "voteapp",
+  "description": "",
+  "main": "app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./dist/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "weui": "^1.1.0",
+    "vue": "^2.1.8",
+    "zepto": "^1.2.0"
+  }
+}

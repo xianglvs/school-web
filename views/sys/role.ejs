@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>重庆信用中心-欢迎您的到来-角色管理</title>
+	<% include  ../template/iframeCommonCss.ejs %>
+	<% include ../template/commonJs.ejs %>
+</head>
+
+<body>
+    <!-- 工具集 -->
+	<script id="toolTable" type="text/html">
+		<div class="layui-btn-container">
+			<button class="layui-btn layui-btn-normal " lay-event="addData" id="btn-add">添加角色</button>
+		</div>
+	</script>
+
+    <!--表格 -->
+    <table id="roleTable" lay-filter="test"></table>
+
+    <!-- 表格操作按钮集 -->
+	<script id="barTable" type="text/html">
+		<a lay-event="edit">编辑</a>
+		<a lay-event="del">删除</a>
+	</script>
+
+    <div style="display: none;" class="roleDialog">
+        <form class="layui-form" action="/antique/api/sysRole" method="post"  style="margin-top:40px" lay-filter="roleFrom">
+            <input type="hidden" name="id"/>
+            <div class="layui-form-item">
+                <label class="layui-form-label">角色名称</label>
+                <div class="layui-input-block">
+                    <input name="name" class="layui-input" type="text" placeholder="请输入角色名称" autocomplete="off" lay-verify="roleName"  style="width: 250px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">英文名称</label>
+                <div class="layui-input-block">
+                    <input name="enname" class="layui-input" type="text" placeholder="请输入公司名称" autocomplete="off" lay-verify="enname" style="width: 250px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择权限</label>
+                <div class="layui-input-block">
+                    <div id="LAY-auth-tree-index"></div>
+                </div>
+            </div>
+            <div class="layui-form-item" style="margin-top:40px">
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn layui-btn-normal submitForm" lay-submit="" lay-filter="submitRoleForm">添加</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var zNodes = eval('<%-menuJson%>');
+    </script>
+	<script type="text/javascript" src="<%=resUrl%>/js/sys/role.js"></script>
+</body>
+
+</html>

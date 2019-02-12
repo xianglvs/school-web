@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<% include  ../template/iframeCommonCss.ejs %>
+	<% include ../template/commonJs.ejs %>
+	<% include  ../template/ztree.ejs %>
+	<script type="text/javascript" src="<%=resUrl%>/lib/mock.js"></script>
+	<style>
+		i{width:24px;height:24px;}
+		.menuIcons a:hover{opacity:0.7;}
+	</style>
+</head>
+
+<body>
+	<style type="text/css">
+		.ztree li span.button.add {margin-left:2px; margin-right: -1px; background-position:-144px 0; vertical-align:top; *vertical-align:middle}
+	</style>
+	</head>
+    <body>
+		<!--<div style="margin-bottom:5px">
+			<a href="javascript:void(0)" class="layui-btn" onclick="addRootMenu();">添加根菜单</a>
+			<a href="javascript:void(0)" class="layui-btn" onclick="javascript:window.location.reload()">刷新</a>
+		</div>-->
+    	<div class="dialogMenu" style="display:none;">
+			<form class="layui-form" style="padding:20px 20px 0 0;">
+				<div class="layui-form-item">
+					<label class="layui-form-label">菜单名称</label>
+					<div class="layui-input-block">
+						<input name="parentId"  type="hidden"/>
+						<input name="id"  type="hidden"/>
+						<input type="text" name="name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">菜单url</label>
+					<div class="layui-input-block">
+						<input type="text" name="href" placeholder="请输入" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">菜单图标</label>
+					<div class="layui-input-block">
+						<input class="layui-btn layui-btn-normal selectIcon" value="选择图标" type="button" style="margin-right:10px;"/>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">菜单描述</label>
+					<div class="layui-input-block">
+						<input type="text" name="remarks" placeholder="请输入" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">菜单排序</label>
+					<div class="layui-input-block">
+						<input type="text" name="sort" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label"></label>
+					<div class="layui-input-block">
+						<button class="layui-btn layui-btn-fluid submitForm" lay-submit lay-filter="submitForm">确认添加</button>
+					</div>
+				</div>
+		    </form>
+		</div>
+		<div class="menuIcons" style="display:none;"></div>
+    	<ul id="treeDemo" class="ztree"></ul>
+		<script type="text/javascript" src="<%=resUrl%>/js/sys/menu.js"></script>
+		<script type="text/javascript">
+			var zNodes = eval('<%-menuJson%>');
+			var searchMenuById = function(id){
+				for(var i=0;i<zNodes.length;i++){
+					if(zNodes[i].id == id){
+						return zNodes[i];
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

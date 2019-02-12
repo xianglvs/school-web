@@ -1,0 +1,47 @@
+@charset "utf-8";
+.auto-height{clear:both;height:0;line-height:0;font-size:0;}
+html,body {
+	margin: 0;padding: 0;position:absolute;left:0;top:0;right:0;bottom:0;
+	font-family: PingFangSC-Regular,'Helvetica Neue',Tahoma,Arial,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
+	font-size: calc(100vw/8);
+	background-color:#0165A1;
+}
+
+/**取消谷歌浏览器的默认行为**/
+input {outline: none;resize:none;}
+textarea {outline: none;resize:none;}
+
+.login-frame{left:0.82rem;height:0.25rem;position:absolute;top:0.34rem;}
+.login-frame .logo{height:0.4rem;width:1rem;float:left;margin:0.045rem 0 0 0.05rem;}
+.login-frame .logo img{display:block;}
+.login-frame .logo-title{height:0.25rem;line-height:0.25rem;color:#FFFFFF;font-size:0.14rem;float: left;margin:0 0 0 0.02rem;font-weight: bold;}
+.login-bg{position:absolute;bottom:0.34rem;height:0.93rem;left:0;right:0;}
+.login-ele{position:absolute;width:4.41rem;height:2.59rem;top:0.2rem;}
+.footer{background-color:#1973A9;position:fixed;height:0.34rem;left:0;right:0;bottom:0;text-align:center;font-size:0.07rem;color:#FFFFFF;line-height:0.34rem;}
+
+.form{width:1.38rem;height:1.78rem;background-color:#FFFFFF;position:absolute;left:4.31rem;top:0.8rem;border-radius:0.02rem;padding:0 0.15rem;}
+.form .title{height:0.2rem;margin:0.15rem 0 0.1rem 0;color:#0065A0;font-size:0.1rem;line-height:0.2rem;font-weight:400;}
+.form .row{height:0.2rem;border:1px solid #F1F1F1;border-radius:0.02rem;margin-bottom:0.12rem;
+    -webkit-box-shadow: 1px 1px 1px #FAFAFA inset;
+    -moz-box-shadow: 1px 1px 1px #FAFAFA inset;
+    box-shadow: 1px 1px 1px #FAFAFA inset;
+}
+.form .row i{display:block;color:#959595;margin:0.05rem 0.04rem 0 0.06rem;float: left;width:0.08rem;height:0.12rem;font-size:0.09rem;;}
+.form .row input{width:1.14rem;float: left;height:0.2rem;color:#333333;border:0 none;padding:0;font-size:0.08rem;}
+.form .row input::-webkit-input-placeholder{color: #CCCCCC;}
+.form .layui-form-item{font-size:0.08rem;height:0.2rem;}
+.form .layui-form-item .layui-input-block{font-size:0.08rem;height:0.2rem;margin:0;}
+.layui-form-item .layui-form-checkbox[lay-skin=primary]{float:right;margin-top:0;}
+.layui-form-checked[lay-skin=primary] i{border-color: #0165A1;background-color:#0165A1;}
+.layui-form-checkbox[lay-skin=primary]:hover i{border-color: #0165A1;}
+.layui-form-checkbox[lay-skin=primary] span{font-size:0.06rem;padding-right:0;float: right;height:0.2rem;line-height:0.2rem;}
+.layui-btn{display:block;background-color:#0165A1;height:0.21rem;font-size:0.08rem;line-height:0.21rem;}
+.layui-form-checkbox[lay-skin=primary] i{width:0.07rem;height:0.07rem;display:block;margin:0.06rem 0 0 0;float:right;}
+.layui-form-checkbox span{padding-right:0.02rem;padding-left:0.02rem;}
+.layui-icon-ok:before{width:0.07rem;height:0.07rem;line-height:0.07rem;position:absolute;left:-1px;top:-1px;}
+input{box-shadow: 0 0 20px 10px #fff inset;}
+input:-webkit-autofill,
+ textarea:-webkit-autofill,
+ select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+ }
