@@ -159,7 +159,7 @@ gulp.task('browser-sync', ['nodemon'], function () {
   browserSync.init(null, {
     proxy: "http://localhost:" + config.server.port,
     files: ["dist/views/*.*", "dist/css/*.*", "dist/js/*.*", "dist/img/*.*"],
-    browser: "chrome",
+    browser: "default",
     port: config.server.browserSyncPort || 7000
   });
 });
