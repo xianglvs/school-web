@@ -14,4 +14,18 @@ module.exports = function (app) {
         newsList:JSON.stringify(result.data.list||[])
      });
   });
+
+ app.get(`${namespace.root}/article/detail`, async function (req, res) {
+      let result = await http.get(`/api/article/`+req.query.id, {
+      }).catch(e => {
+        res.send({
+          errCode: 401
+        });
+      });
+     res.render('web/articleDetail', {
+       newsDetail:result.data
+     });
+ });
+  
+
 };

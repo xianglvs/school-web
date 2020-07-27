@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title><%=newsDetail.title %></title>
+    <% include ../webTemplate/commonCss.ejs %>
+    <link href="<%=resUrl%>/css/web/article.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="articleDetail">
+          <div class="artDetTitle"><%=newsDetail.title %></div>
+          <div class="artDetTime artDetDesc"><%=newsDetail.updateDate %></div>
+          <div class="artDetDesc"><%=newsDetail.description %></div>
+          <div class="artDetCon"><%- newsDetail.content %></div>
+    </div>
+    
+</body>
+
+</html>

@@ -7,11 +7,6 @@
     <% include ../webTemplate/commonCss.ejs %>
     <link href="<%=resUrl%>/css/web/article.css" rel="stylesheet" type="text/css" />
 </head>
-<script>
-		// var newsList= '<%-newsList || [] %>';
-    // newsList=JSON.parse(newsList)
-    // console.log(newsList)
-	</script>
 <body>
     <div class="article">
         <img src="<%=resUrl%>/img/article/1.jpeg" width="100%" height="100%"/>
@@ -19,11 +14,11 @@
           <% 
           var newsList=JSON.parse(newsList||[]);
           newsList.forEach(function(item){ %>
-          <div class="articleItem">
+          <a href="/article/detail?id=<%= item.id%>"><div class="articleItem">
               <div class="name"><%= item.title%> </div>
               <div class="content"><%= item.description%></div>
               <div class="time"><%= item.updateDate%></div>
-          </div>
+          </div></a>
             <% }); %>
         </div>
     </div>
