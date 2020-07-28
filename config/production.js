@@ -39,24 +39,17 @@ module.exports = {
   },
   less: {
     globalVars: {
-      imageUrl: '~""' // 图片访问路径,空白表示项目相对地址
+      resUrl: '~""' // 图片访问路径,空白表示项目相对地址
     }
   },
   resUrl: '', // 当前项目访问路径,空白表示项目相对地址
   proxy: {
-    '/antique': { // 要拦截的地址
-      target: 'http://47.96.2.236:9000/service-manage-api', // 要代理的地址
+    '/web': { // 后端接口服务器
+      target: 'http://120.78.133.215:9998', // 要代理的地址
       pathRewrite: { // 拦截到的地址重写为
-        '^/antique': '/'
+        '^/web': '/'
       },
       changeOrigin: true
-    },
-    '/antUpload': { // 要拦截的地址
-        target: 'http://47.96.2.236:9015', // 要代理的地址
-        pathRewrite: { // 拦截到的地址重写为
-            '^/antUpload': '/'
-        },
-        changeOrigin: true
     }
   }
 };
