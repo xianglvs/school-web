@@ -1,21 +1,23 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html style="font-size: calc(100vw * 100 / 1080);">
+    <head>
+        <meta content="telephone=no,email=no" name="format-detection">
+        <meta name="data-spm" content="a215s">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+        <title><%=newsDetail.title %></title>
+        <link href="<%=resUrl%>/css/web/article.css" rel="stylesheet" type="text/css" />
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <title><%=newsDetail.title %></title>
-    <% include ../webTemplate/commonCss.ejs %>
-    <link href="<%=resUrl%>/css/web/article.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-    <div class="articleDetail">
-          <div class="artDetTitle"><%=newsDetail.title %></div>
-          <div class="artDetTime artDetDesc"><%=newsDetail.updateDate %></div>
-          <div class="artDetDesc"><%=newsDetail.description %></div>
-          <div class="artDetCon"><%- newsDetail.content %></div>
-    </div>
-    
-</body>
-
+    <body>
+        <div class="articleDetail">
+            <div class="artDetTitle"><%=newsDetail.title %></div>
+            <div class="artDetTime artDetDesc"><%=newsDetail.updateDate %></div>
+            <%if(newsDetail.description){%>
+            <div class="artDetDesc"><%=newsDetail.description %></div>
+            <%}%>
+            <div class="artDetCon"><%- newsDetail.content %></div>
+        </div>
+    </body>
 </html>
