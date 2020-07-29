@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6{
     margin-bottom: 0.2rem;
 }
 .article .articleItems .articleItem .name {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -22,15 +22,45 @@ h1, h2, h3, h4, h5, h6{
 .article .articleItems .articleItem .time {
     color: #808080;
     text-align: right;
-    font-size: 0.3rem;
+    font-size: 0.5rem;
 }
 .article .articleItems .articleItem .content {
-    color: #808080;
+    position: relative;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    color: #808080;
+    font-size: 0.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
     margin: 0.3rem 0;
+    max-height: 2.1rem;
+    line-height: 0.7rem;
 }
+
+// .article .articleItems .articleItem .content:before {
+//     content: '...';
+//     position: absolute;
+//     z-index: 1;
+//     bottom: 0;
+//     right: 0;
+//     font-size:0.55rem;
+//     width: 0.75rem;
+//     padding-left: 0.03rem;
+//     box-sizing: border-box;
+//     background-color: white;
+// }
+
+// .article .articleItems .articleItem .content:after {
+//     content: '  ';
+//     display: inline-block;
+//     position: absolute;
+//     z-index: 2;
+//     width: 100%;
+//     height: 100%;
+//     background-color: white;
+// }
+
+
 
 .articleDetail {
     padding: 0.3rem;
