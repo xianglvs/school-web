@@ -4,7 +4,7 @@ const namespace = require('../namespace');
 module.exports = function (app) {
 
   app.get(`${namespace.root}/`, async function (req, res) {
-      let result = await http.get(`/api/article/list`, {
+      let result = await http.get(`/api/article/list`, {pageSize:10
       }).catch(e => {
         res.send({
           errCode: 401
