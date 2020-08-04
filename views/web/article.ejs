@@ -23,13 +23,13 @@
           <% 
           var newsList=JSON.parse(newsList||[]);
           newsList.forEach(function(item){ %>
-          <a href="/article/detail?id=<%= item.id%>">
             <% 
             var listImage='';
             if(item.listImage){
                 listImage=(item.listImage).split(",");
             }
             %>
+            <a href="/article/detail?id=<%= item.id%>">
             <% if(item.listType == "0"){ %>
             <div class="articleItem">
               <div class="name"><%= item.title%> </div>
@@ -66,7 +66,7 @@
                     </div>
             </div>
             <% } %>
-          </a>
+            </a>
             <% }); %>
         </div>
         </div>
@@ -104,8 +104,10 @@
     <script id="contentTitle" type="text/html">{{title}}</script>
     <script >
     var myScroll =new BScroll(".wrapper", {
-        pullUpLoad: true
+        pullUpLoad: true,
+        click:true
    });
+   var pageNum=1;
     $(".iconSearch").click(function(){
         $("#searchPage").show();
         $("#article").hide();
@@ -120,32 +122,31 @@
     })
     function searchNews(){
         var title=$(".searchcon").val();
-        var list=getDate({title:title});
-        document.getElementById('contentTo').innerHTML = template('content', list);
+        $.get('/web/api/article/list', {title:title,pageSize:20}, function (result) {
+            if(result.code==0){
+                document.getElementById('contentTo').innerHTML = template('content', result.data);
+            }
+        });
         if(!title){
             title="搜索新闻";
         }
         document.getElementById('contentTitleTo').innerHTML = template('contentTitle', {title:title});
 
     }
-    function getDate(params){
-        params.pageSize=10;
-        $.get('/web/api/article/list', params, function (result) {
-            //myScroll.finishPullUp();
-            if(result.code==0){
-                return result.data;
-            }
-        });
-    }
-
     myScroll.on('pullingUp', function(){
+        pageNum++;
         var params={};
         params.pageSize=10;
-        params.pageNum=2;
+        params.pageNum=pageNum;
         $.get('/web/api/article/list', params, function (result) {
-            //myScroll.finishPullUp();
             if(result.code==0){
-                document.getElementById('articleItems').append(template('content', result.data));
+                $("#articleItems").append(template('content', result.data));
+                if(result.data.pages>=pageNum){
+                    setTimeout(()=>{
+                        myScroll.finishPullUp();
+                        myScroll.refresh();
+                    },500)
+                }
             }
         });
     })
