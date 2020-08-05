@@ -47,12 +47,12 @@
                     <div class="title"><%= item.title%> </div>
                     <div class="time"><%= item.updateDate%></div>
                </div>
-                <div class="rig"><img style="width: 100%" src=<%= listImage[0] %> /></div>
+                <div class="rig"><img src=<%= listImage[0] %> /></div>
             </div>
             <% } else if(item.listType == "2"){ %>
             <div class="articleItem articleType2">
                     <div class="title"><%= item.title%> </div>
-                    <div class="pic"><img style="width: 100%" src=<%= listImage[0] %> /></div>
+                    <div class="pic"><img src=<%= listImage[0] %> /></div>
             </div>
             <% } else if(item.listType == "3"){ %>
             <div class="articleItem articleType3">
@@ -65,9 +65,9 @@
             <div class="articleItem articleType2">
                     <div class="title"><%= item.title%> </div>
                     <div class="pic">
-                        <img style="width: 30vw;margin-right: 1vw" src=<%= listImage[0] %> />
-                        <img style="width: 30vw;margin-right: 1vw" src=<%= listImage[1] %> />
-                        <img style="width: 30vw;margin-right: 1vw" src=<%= listImage[2] %> />
+                        <img style="width: 31%;margin-right: 1%" src=<%= listImage[0] %> />
+                        <img style="width: 31%;;margin-right: 1%" src=<%= listImage[1] %> />
+                        <img style="width: 31%;;margin-right: 1%" src=<%= listImage[2] %> />
                     </div>
             </div>
             <% } %>
@@ -78,13 +78,13 @@
     </div>
     <div class="article" id="searchPage" style="display: none">
         <div class="nav-header">
-            <svg t="1596432961087" class="iconlef closeIconSearh" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2606" width="55" height="55"><path d="M254.89 512l448-448 60.417 60.33-448 448L254.89 512z m60.843-60.757l453.291 453.376-60.33 60.33-453.377-453.376 60.416-60.33z" p-id="2607" fill="#E89F62"></path></svg>
+            <svg t="1596432961087" class="iconlef closeIconSearh" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2606" ><path d="M254.89 512l448-448 60.417 60.33-448 448L254.89 512z m60.843-60.757l453.291 453.376-60.33 60.33-453.377-453.376 60.416-60.33z" p-id="2607" fill="#E89F62"></path></svg>
             <div class="logo" id="contentTitleTo">搜索新闻</div>
         </div>
         <div class="articleSearch">
             <input class="searchcon" placeholder="搜你想看"/>
             <div class="searchBot" onclick="searchNews();">
-                    <svg t="1596435414853" class="iconSearch" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4743" width="50" height="50"><path d="M970.959996 924.671991L828.645997 782.359992c77.613999-83.175999 125.532999-194.418998 125.532999-316.902997C954.179996 208.783998 745.399998 0.005 488.727 0.005c-256.649997 0-465.451995 208.778998-465.451995 465.451995 0 92.275999 27.066 181.596998 78.312999 258.232998 10.705 16.082 32.372 20.294 48.407 9.635 16.034-10.705 20.34-32.372 9.633999-48.407-43.52-65.139999-66.535999-141.008999-66.535999-219.459998 0-218.157998 177.476998-395.634996 395.633996-395.634996 218.157998 0 395.634996 177.476998 395.634996 395.633996 0 218.157998-177.476998 395.634996-395.634996 395.634997-78.729999 0-154.785998-23.133-219.995998-66.862-15.988-10.683-37.678-6.47-48.452999 9.541-10.729 16.012-6.447 37.702 9.542 48.454 76.752999 51.478999 166.281998 78.684999 258.906997 78.684999 92.159999 0 177.919998-27.276 250.273998-73.657999l149.689998 149.689998A58.018999 58.018999 0 0 0 929.811996 1023.99999c14.895 0 29.79-5.702 41.146-17.059 22.738-22.714 22.738-59.530999 0-82.268999zM247.552003 396.697996c25.95-100.629999 109.357999-174.008998 212.502998-186.924998 19.13-2.397 32.698-19.852 30.299999-38.982-2.397-19.13-19.99-32.721-38.980999-30.299999-131.745999 16.5-238.264998 110.241999-271.404998 238.799997-4.818 18.664 6.4 37.701 25.088 42.495a34.144 34.144 0 0 0 8.727 1.117c15.546 0 29.719-10.449 33.768-26.205z" p-id="4744" fill="#E89F62"></path></svg> 
+                    <svg t="1596435414853" class="iconSearch" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4743" ><path d="M970.959996 924.671991L828.645997 782.359992c77.613999-83.175999 125.532999-194.418998 125.532999-316.902997C954.179996 208.783998 745.399998 0.005 488.727 0.005c-256.649997 0-465.451995 208.778998-465.451995 465.451995 0 92.275999 27.066 181.596998 78.312999 258.232998 10.705 16.082 32.372 20.294 48.407 9.635 16.034-10.705 20.34-32.372 9.633999-48.407-43.52-65.139999-66.535999-141.008999-66.535999-219.459998 0-218.157998 177.476998-395.634996 395.633996-395.634996 218.157998 0 395.634996 177.476998 395.634996 395.633996 0 218.157998-177.476998 395.634996-395.634996 395.634997-78.729999 0-154.785998-23.133-219.995998-66.862-15.988-10.683-37.678-6.47-48.452999 9.541-10.729 16.012-6.447 37.702 9.542 48.454 76.752999 51.478999 166.281998 78.684999 258.906997 78.684999 92.159999 0 177.919998-27.276 250.273998-73.657999l149.689998 149.689998A58.018999 58.018999 0 0 0 929.811996 1023.99999c14.895 0 29.79-5.702 41.146-17.059 22.738-22.714 22.738-59.530999 0-82.268999zM247.552003 396.697996c25.95-100.629999 109.357999-174.008998 212.502998-186.924998 19.13-2.397 32.698-19.852 30.299999-38.982-2.397-19.13-19.99-32.721-38.980999-30.299999-131.745999 16.5-238.264998 110.241999-271.404998 238.799997-4.818 18.664 6.4 37.701 25.088 42.495a34.144 34.144 0 0 0 8.727 1.117c15.546 0 29.719-10.449 33.768-26.205z" p-id="4744" fill="#E89F62"></path></svg> 
             </div>
         </div>
         <div class="articleItems" id="contentTo">
@@ -95,11 +95,43 @@
         {{if (list && list.length > 0)}}
             {{each list}}
             <a href="/article/detail?id={{$value.id}}">
-                <div class="articleItem">
-                    <div class="name">{{$value.title}} </div>
-                    <div class="content">{{$value.description}}</div>
-                    <div class="time">{{$value.updateDate}}</div>
-                </div>
+                    {{$value.listImage | splitImages}}
+                    {{if ($value.listType == "0")}}
+                    <div class="articleItem">
+                        <div class="name">{{$value.title}} </div>
+                        <div class="content">{{$value.description}}</div>
+                        <div class="time">{{$value.updateDate}}</div>
+                    </div>
+                    {{else if ($value.listType == "1")}}
+                    <div class="articleItem articleType1">
+                        <div class="lef">
+                             <div class="title">{{$value.title}}</div>
+                             <div class="time">{{$value.updateDate}}</div>
+                        </div>
+                         <div class="rig"><img src={{$imports.imgs[0]}} /></div>
+                     </div>
+                    {{else if ($value.listType == "2")}}
+                    <div class="articleItem articleType2">
+                            <div class="title">{{$value.title}} </div>
+                            <div class="pic"><img src={{$imports.imgs[0]}} /></div>
+                    </div>
+                    {{else if ($value.listType == "3")}}
+                    <div class="articleItem articleType3">
+                            <div class="pic">
+                                <img style="width: 100%" src={{$imports.imgs[0]}} />
+                                <div class="title">{{$value.title}} </div>
+                            </div>
+                    </div>
+                    {{else if ($value.listType == "4")}}
+                    <div class="articleItem articleType2">
+                            <div class="title">{{$value.title}} </div>
+                            <div class="pic">
+                                {{each $imports.imgs as img i}}
+                                    <img style="width: 31%;margin-right: 1%" src={{img}} />
+                                {{/each}}
+                            </div>
+                    </div>
+                    {{/if}}
             </a>
           {{/each}}
       {{else}}
@@ -109,6 +141,13 @@
     </script>
     <script id="contentTitle" type="text/html">{{title}}</script>
     <script >
+    template.defaults.imports.splitImages = function (imgsStr) {
+        var imgs="";
+        if(imgsStr){
+            imgs = imgsStr.split(',');
+        }
+        template.defaults.imports.imgs = imgs;
+    };
     var myScroll =new BScroll(".wrapper", {
         pullUpLoad: true,
         click:true

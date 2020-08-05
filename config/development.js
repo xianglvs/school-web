@@ -25,10 +25,10 @@ module.exports = {
       },
       changeOrigin: true
     },
-    '/upload': { // 图片上传服务器
-      target: 'http://47.96.2.236:9015', // 要代理的地址
+    '/dev-api': { // 图片服务器
+      target: 'http://120.78.133.215:9998', // 要代理的地址
       pathRewrite: { // 拦截到的地址重写为
-        '^/upload': '/'
+        '^/dev-api': '/'
       },
       changeOrigin: true
     }
