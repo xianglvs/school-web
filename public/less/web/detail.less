@@ -1,9 +1,48 @@
-
+    @width:640px;
+ 
+.articleDetail{
+    max-width: @width;
+    margin:0 auto;
+}
+.nav-header {
+    width: 100%;
+    max-width: @width;
+    font-size: 2vh;
+    background-color: #f4f5f6;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    color: #e89f62;
+    height: 8vh;
+    line-height: 8vh;
+    box-shadow: 0px 10px 10px -10px #ccc;
+}
+ .nav-header .logo {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 80vmin;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 8vh;
+}
+ .nav-header svg {
+    vertical-align: middle;
+    position: absolute;
+}
+.nav-header .iconlef {
+    top:2vh;
+    left: 2vw;
+    width: 4vh;
+    height: 4vh;
+}
 .articleDetail .artDetCon {
     max-width: 600px;
     letter-spacing: 1px;
     padding:2vh 5vw;
     margin:0 auto;
+    margin-top: 8vh;
 }
 .articleDetail .artDetCon p {
     font-size: 18px;

@@ -7,12 +7,24 @@
         <meta content="yes" name="apple-mobile-web-app-capable">
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
         <title><%=newsDetail.title %></title>
+        <% include ../webTemplate/commonCss.ejs %>
+        <% include ../webTemplate/commonJs.ejs %>
         <link href="<%=resUrl%>/css/web/detail.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
+        
         <div class="articleDetail">
+                <div class="nav-header">
+                        <svg t="1596432961087" class="iconlef closeIconSearh" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2606" ><path d="M254.89 512l448-448 60.417 60.33-448 448L254.89 512z m60.843-60.757l453.291 453.376-60.33 60.33-453.377-453.376 60.416-60.33z" p-id="2607" fill="#E89F62"></path></svg>
+                        <div class="logo" id="contentTitleTo"><%=newsDetail.title %></div>
+                </div>
             <div class="artDetCon"><%- newsDetail.content %></div>
         </div>
     </body>
+    <script >
+    $(".closeIconSearh").click(function(){
+        history.go(-1)
+    })
+    </script>
 </html>
