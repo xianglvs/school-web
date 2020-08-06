@@ -1,8 +1,9 @@
-@width:640px;
+@width: 640px;
 
-.main{
+.main {
     max-width: @width;
-    margin:0 auto;
+    min-height: 500px;
+    margin: 0 auto;
 }
 
 h1,
@@ -18,32 +19,45 @@ h6 {
     color: #4d4d4d;
 }
 
-.wrapper{
-    margin-top:12vh;
+.wrapper {
+    margin-top: 1vh;
     height: 90vh;
 }
-.wrapper a{
+.wrapper a {
     display: block;
+}
+
+.occupy {
+    width: 100%;
+    min-height: 40px;
+    height: 8vh;
+    line-height: 8vh;
 }
 .article .nav-header {
     width: 100%;
     max-width: @width;
-    font-size: 2vh;
+    min-height: 40px;
+    font-size: 3vh;
     background-color: #f4f5f6;
     text-align: center;
     position: fixed;
     top: 0;
     z-index: 999;
-    color:#eb3d00;
+    color: #eb3d00;
     height: 8vh;
     line-height: 8vh;
     box-shadow: 0px 10px 10px -10px #ccc;
+    @media screen and (max-height: 650px) {
+        font-size: 20px;
+        line-height: 40px;
+    }
 }
+
 .article .nav-header .logo {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
     font-weight: 700;
-    max-width: 80vmin;
+    width: 100%;
+    min-height: 40px;
 }
 .article .nav-header svg {
     vertical-align: middle;
@@ -51,51 +65,65 @@ h6 {
     fill: #eb3d00;
 }
 .article .nav-header .iconlef {
-    top:2vh;
+    top: 2vh;
     left: 2vw;
     width: 4vh;
     height: 4vh;
+    min-width: 30px;
+    min-height: 30px;
 }
 .article .nav-header .iconrig {
-    top:2vh;
+    top: 2vh;
     right: 2vw;
     width: 4vh;
     height: 4vh;
+    min-width: 30px;
+    min-height: 30px;
 }
 
 .article .articleSearch {
     margin: 0 2vw;
-    margin-top: 12vh;
+    margin-top: 1vh;
     height: 6vh;
-    border: 1px solid #e89f62;
+    min-height: 40px;
+    border: 1px solid #eb3d00;
 }
 .article .articleSearch .searchcon {
     width: 78%;
+    max-width: 430px;
     padding-left: 3vw;
     height: 100%;
     border: none;
     font-size: 18px;
 }
 .article .articleSearch .searchBot {
-    width: 12%;
+    width: 13%;
+    height: 100%;
     font-size: 20px;
+    line-height: 8vh;
+    min-width: 40px;
+    min-height: 24px;
     text-align: center;
-    display: inline-block;
+    display: block;
+    float: right;
+}
+.article .articleSearch .searchBot svg {
+    fill: #eb3d00;
 }
 .article .articleSearch .searchBot .iconSearch {
-    width: 4vh;
-    height: 4vh;
-    vertical-align: middle;
+    width: 60%;
+    height: 60%;
+    margin-top: 10%;
 }
 
 .article .articleItems {
-    margin-top: 6.2vh;
     padding: 0 1vw;
 }
 
 .article .articleItems .noInfo {
+    fill: #eb3d00;
     text-align: center;
-    padding:1vh 0 2vh 0;
+    padding: 1vh 0 2vh 0;
     font-size: 16px;
 }
 .article .articleItems .articleItem {
@@ -103,12 +131,17 @@ h6 {
     padding: 1vh;
     margin-bottom: 2vh;
     max-width: @width;
+    min-height: 100px;
 }
 .article .articleItems .articleItem .name {
     font-size: 20px;
+    min-height: 26px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    @media screen and (max-height: 650px) {
+        line-height: 26px;
+    }
 }
 .article .articleItems .articleItem .time {
     color: #808080;
@@ -125,6 +158,10 @@ h6 {
     -webkit-line-clamp: 3;
     margin: 0.5vh 0;
     line-height: 3.5vh;
+    min-height: 40px;
+    @media screen and (max-height: 650px) {
+        line-height: 24px;
+    }
 }
 
 .article .articleItems .articleType1 {
@@ -139,12 +176,15 @@ h6 {
 .article .articleItems .articleType1 .lef .title {
     line-height: 4vh;
     font-size: 20px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     margin-bottom: 1vh;
+    @media screen and (max-height: 650px) {
+        line-height: 24px;
+    }
 }
 .article .articleItems .articleType1 .lef .time {
     text-align: left;
@@ -154,9 +194,8 @@ h6 {
     float: right;
     overflow: hidden;
 }
-.article .articleItems .articleType1 .rig img{
-    max-width: 100%;
-    max-height: 20vh;
+.article .articleItems .articleType1 .rig img {
+    width: 100%;
 }
 
 .article .articleItems .articleType2 {
@@ -164,20 +203,33 @@ h6 {
 }
 .article .articleItems .articleType2 .title {
     line-height: 4vh;
-    margin-bottom:1vh;
+    margin-bottom: 1vh;
     font-size: 20px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    @media screen and (max-height: 650px) {
+        line-height: 24px;
+    }
 }
+
+.articleDetail .artDetTitle {
+    margin-bottom: 2vh;
+    font-weight: bold;
+    font-size: 28px;
+    @media screen and (min-width: 1100px) {
+        font-size: 20px;
+    }
+}
+
 .article .articleItems .articleType2 .pic {
     width: 100%;
     max-height: 20vh;
     overflow: hidden;
 }
-.article .articleItems .articleType2 .pic img{
+.article .articleItems .articleType2 .pic img {
     max-width: 100%;
     display: block;
     float: left;
@@ -203,7 +255,7 @@ h6 {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.article .articleItems .articleType3 .pic img{
+.article .articleItems .articleType3 .pic img {
     max-width: 100%;
 }
 .articleDetail {

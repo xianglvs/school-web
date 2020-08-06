@@ -8,12 +8,13 @@
     width: 100%;
     max-width: @width;
     font-size: 2vh;
+    min-height: 40px;
     background-color: #f4f5f6;
     text-align: center;
     position: fixed;
     top: 0;
     z-index: 999;
-    color: #e89f62;
+    color: #eb3d00;
     height: 8vh;
     line-height: 8vh;
     box-shadow: 0px 10px 10px -10px #ccc;
@@ -21,23 +22,32 @@
  .nav-header .logo {
     display: block;
     margin:0 auto;
-    max-width: 60vmin;
+    font-weight: 700;
+    font-size: 3vh;
+    max-width: 60vw;
+    min-height: 40px;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     height: 8vh;
-    line-height: 8vh;
+    @media screen and (max-height: 650px) {
+        font-size: 20px;
+        line-height: 40px;
+    }
 }
  .nav-header svg {
     vertical-align: middle;
     position: absolute;
 }
 .nav-header .iconlef {
+    fill:#eb3d00;
     top:2vh;
     left: 2vw;
     width: 4vh;
+    min-width: 18px;
     height: 4vh;
+    min-height: 18px;
 }
 .articleDetail .artDetCon {
     max-width: 600px;
