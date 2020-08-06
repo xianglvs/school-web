@@ -135,11 +135,14 @@ h6 {
     font-size: 20px;
 }
 .article .articleItems .articleType1 .lef .title {
-    height: 5vh;
-    line-height: 5vh;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    line-height: 4vh;
+    font-size: 20px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; 
+    margin-bottom: 1vh;
 }
 .article .articleItems .articleType1 .lef .time {
     text-align: left;
@@ -158,12 +161,13 @@ h6 {
     overflow: hidden;
 }
 .article .articleItems .articleType2 .title {
-    height: 5vh;
-    line-height: 5vh;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    line-height: 4vh;
     font-size: 20px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; 
 }
 .article .articleItems .articleType2 .pic {
     width: 100%;
@@ -175,19 +179,20 @@ h6 {
 }
 
 .article .articleItems .articleType3 {
-    position: relative;
     font-size: 20px;
 }
 .article .articleItems .articleType3 .pic {
+    position: relative;
     max-height: 20vh;
     overflow: hidden;
 }
 .article .articleItems .articleType3 .pic .title {
     position: absolute;
-    bottom: 1vh;
+    bottom: 0;
+    left: 0;
     color: #ffffff;
     background-color: rgba(8, 8, 8, 0.3);
-    width: 94%;
+    width: 100%;
     padding: 0.5vh 1vw;
     overflow: hidden;
     white-space: nowrap;
