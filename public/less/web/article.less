@@ -29,35 +29,46 @@ h6 {
 
 .occupy {
     width: 100%;
-    min-height: 40px;
-    height: 8vh;
-    line-height: 8vh;
+    height: 40px;
+    @media screen and (min-height: 650px) {
+        font-size: 20px;
+        height: 8vh;
+        line-height: 8vh;
+    }
 }
 .article .nav-header {
     width: 100%;
     max-width: @width;
-    min-height: 40px;
-    font-size: 3vh;
+    font-size: 20px;
     background-color: #f4f5f6;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius: 5px;
     text-align: center;
     position: fixed;
     top: 0;
     z-index: 999;
     color: #eb3d00;
-    height: 8vh;
-    line-height: 8vh;
+    height: 40px;
     box-shadow: 0px 10px 10px -10px #ccc;
-    @media screen and (max-height: 650px) {
+    @media screen and (min-height: 650px) {
         font-size: 20px;
-        line-height: 40px;
+        height: 8vh;
+        line-height: 8vh;
     }
 }
 
 .article .nav-header .logo {
     display: block;
     font-weight: 700;
+    font-size:20px;
+    height: 40px;
     width: 100%;
-    min-height: 40px;
+    line-height: 40px;
+    @media screen and (min-height: 650px) {
+        font-size: 20px;
+        height: 8vh;
+        line-height: 8vh;
+    }
 }
 .article .nav-header svg {
     vertical-align: middle;
@@ -65,20 +76,32 @@ h6 {
     fill: #eb3d00;
 }
 .article .nav-header .iconlef {
-    top: 2vh;
-    left: 2vw;
-    width: 4vh;
-    height: 4vh;
-    min-width: 30px;
-    min-height: 30px;
+    top: 5px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    @media screen and (min-height: 650px) {
+        top: 2vh;
+        left: 2vw;
+        width: 4vh;
+        height: 4vh;
+        min-width: 30px;
+        min-height: 30px;
+    }
 }
 .article .nav-header .iconrig {
-    top: 2vh;
-    right: 2vw;
-    width: 4vh;
-    height: 4vh;
-    min-width: 30px;
-    min-height: 30px;
+    top: 5px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    @media screen and (min-height: 650px) {
+        top: 2vh;
+        right: 2vw;
+        width: 4vh;
+        height: 4vh;
+        min-width: 30px;
+        min-height: 30px;
+    }
 }
 
 .article .articleSearch {
@@ -228,6 +251,7 @@ h6 {
     width: 100%;
     max-height: 20vh;
     overflow: hidden;
+    border-radius: 5px;
 }
 .article .articleItems .articleType2 .pic img {
     max-width: 100%;
@@ -242,6 +266,7 @@ h6 {
     position: relative;
     max-height: 20vh;
     overflow: hidden;
+    border-radius: 5px;
 }
 .article .articleItems .articleType3 .pic .title {
     position: absolute;
