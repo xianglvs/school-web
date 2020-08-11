@@ -154,7 +154,7 @@ h6 {
     padding: 1vh;
     margin-bottom: 2vh;
     max-width: @width;
-    min-height: 100px;
+    min-height: 60px;
 }
 .article .articleItems .articleItem .name {
     font-size: 20px;
@@ -162,7 +162,7 @@ h6 {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    @media screen and (max-height: 650px) {
+    @media screen and (min-height: 650px) {
         line-height: 26px;
     }
 }
@@ -182,9 +182,13 @@ h6 {
     margin: 0.5vh 0;
     line-height: 3.5vh;
     min-height: 40px;
-    @media screen and (max-height: 650px) {
+    @media screen and (min-height: 650px) {
         line-height: 24px;
     }
+}
+
+.article .articleItems .articleType1 .content {
+    -webkit-line-clamp: 2;
 }
 
 .article .articleItems .articleType1 {
@@ -192,29 +196,30 @@ h6 {
     overflow: hidden;
 }
 .article .articleItems .articleType1 .lef {
-    width: 70%;
-    float: left;
+    width: 65%;
+    display: inline-block;
+    vertical-align: middle;
     font-size: 20px;
 }
 .article .articleItems .articleType1 .lef .title {
-    line-height: 4vh;
-    font-size: 20px;
     overflow: hidden;
+    line-height: 24px;
+    font-size:18px;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    margin-bottom: 1vh;
-    @media screen and (max-height: 650px) {
-        line-height: 24px;
+    -webkit-line-clamp: 3;
+    @media screen and (min-height: 650px) {
+        line-height: 3vh;
     }
 }
 .article .articleItems .articleType1 .lef .time {
     text-align: left;
 }
 .article .articleItems .articleType1 .rig {
-    width: 30%;
-    float: right;
+    width: 35%;
+    display: inline-block;
+    vertical-align: middle;
     overflow: hidden;
 }
 .article .articleItems .articleType1 .rig img {

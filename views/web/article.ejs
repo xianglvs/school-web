@@ -45,15 +45,14 @@
             <div class="articleItem">
               <div class="name"><%= item.title%> </div>
               <div class="content"><%= item.description%></div>
-              <div class="time"><%= item.updateDate%></div>
+              <!-- <div class="time"><%= item.updateDate%></div> -->
            </div>
            <% } else if(item.listType == "1"){ %>
            <div class="articleItem articleType1">
                <div class="lef">
                     <div class="title"><%= item.title%> </div>
-                    <div class="time"><%= item.updateDate%></div>
-               </div>
-                <div class="rig"><img src=<%= listImage[0] %> /></div>
+                    <!-- <div class="time"><%= item.updateDate%></div> -->
+               </div><div class="rig"><img src=<%= listImage[0] %> /></div>
             </div>
             <% } else if(item.listType == "2"){ %>
             <div class="articleItem articleType2">
@@ -111,15 +110,14 @@
                     <div class="articleItem">
                         <div class="name">{{$value.title}} </div>
                         <div class="content">{{$value.description}}</div>
-                        <div class="time">{{$value.updateDate}}</div>
+                        <!-- <div class="time">{{$value.updateDate}}</div> -->
                     </div>
                     {{else if ($value.listType == "1")}}
                     <div class="articleItem articleType1">
                         <div class="lef">
                              <div class="title">{{$value.title}}</div>
-                             <div class="time">{{$value.updateDate}}</div>
-                        </div>
-                         <div class="rig"><img src={{$imports.imgs[0]}} /></div>
+                             <!-- <div class="time">{{$value.updateDate}}</div> -->
+                        </div><div class="rig"><img src={{$imports.imgs[0]}} /></div>
                      </div>
                     {{else if ($value.listType == "2")}}
                     <div class="articleItem articleType2">
