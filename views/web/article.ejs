@@ -99,7 +99,7 @@
     <div class="article" id="searchPage" style="display: none">
         <div class="nav-header">
             <svg t="1596432961087" class="iconlef closeIconSearh" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2606" ><path d="M254.89 512l448-448 60.417 60.33-448 448L254.89 512z m60.843-60.757l453.291 453.376-60.33 60.33-453.377-453.376 60.416-60.33z" p-id="2607"></path></svg>
-            <div class="logo" id="contentTitleTo">搜索新闻</div>
+            <div class="logo" id="contentTitleTo">搜你想看</div>
         </div>
         <div class="articleSearch">
             <input class="searchcon" placeholder="搜你想看"/>
@@ -187,7 +187,7 @@
         $("#article").show();
         $(".searchcon").val("");
         document.getElementById('contentTo').innerHTML = template('content', {});
-        document.getElementById('contentTitleTo').innerHTML = template('contentTitle', {title:"搜索"});
+        document.getElementById('contentTitleTo').innerHTML = template('contentTitle', {title:"搜你想看"});
     })
     function searchNews(){
         var title=$(".searchcon").val();
