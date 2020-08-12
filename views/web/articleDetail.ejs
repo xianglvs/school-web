@@ -13,6 +13,7 @@
         <% include ../webTemplate/commonCss.ejs %> 
         <% include ../webTemplate/commonJs.ejs %>
         <link href="<%=resUrl%>/css/web/detail.css" rel="stylesheet" type="text/css" />
+        <script src="<%=resUrl%>/lib/better-scroll.min.js"></script>
     </head>
 
     <body>
@@ -34,12 +35,11 @@
                 </svg>
                 <div onclick="window.location.href='/'" class="logo" id="contentTitleTo">俄罗斯留学</div>
             </div>
-            <div class="artDetCon"><%- newsDetail.content %></div>
+            <div id="mainWrapper" class="wrapper">
+                <div class="artDetCon"><%- newsDetail.content %></div>
+            </div>
         </div>
     </body>
-    <script>
-        $('.closeIconSearh').click(function () {
-            history.go(-1);
-        });
+    <script src="<%=resUrl%>/js/articleDetail.js">
     </script>
 </html>
