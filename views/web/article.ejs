@@ -52,22 +52,32 @@
                <div class="lef">
                     <div class="title"><%= item.title%> </div>
                     <!-- <div class="time"><%= item.updateDate%></div> -->
-               </div><div class="rig"><img src=<%= listImage[0] %> /></div>
+               </div><div class="rig"><img src="<%= listImage[0] + '!m600x400.'+listImage[0].split('.')[1] %>" /></div>
             </div>
             <% } else if(item.listType == "2"){ %>
             <div class="articleItem articleType2">
                     <div class="title"><%= item.title%> </div>
-                    <div class="pic"><img src=<%= listImage[0] %> /></div>
+                    <div class="pic">
+                        <%if(!listImage[0].startsWith("http")){%>
+                        <img src="<%= listImage[0] + '!m750x325.'+listImage[0].split('.')[1] %>" />
+                        <%}else{%>
+                        <img src="<%= listImage[0]%>" />
+                        <%}%>
+                    </div>
             </div>
             <% } else if(item.listType == "3"){ %>
             <div class="articleItem articleType3">
                     <div class="pic">
-                        <img style="width: 100%" src=<%= listImage[0] %> />
+                        <%if(!listImage[0].startsWith("http")){%>
+                        <img src="<%= listImage[0] + '!m750x325.'+listImage[0].split('.')[1] %>" />
+                        <%}else{%>
+                        <img src="<%= listImage[0]%>" />
+                        <%}%>
                         <div class="title"><%= item.title%> </div>
                     </div>
             </div>
             <% } else if(item.listType == "4"){ %>
-            <div class="articleItem articleType2">
+            <div class="articleItem articleType4">
                     <div class="title"><%= item.title%> </div>
                     <div class="pic">
                         <% for(let i = 0; i < listImage.length ;i++){%>
