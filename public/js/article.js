@@ -5,6 +5,13 @@ template.defaults.imports.splitImages = function (imgsStr) {
   }
   template.defaults.imports.imgs = imgs;
 };
+
+$(document).keydown(function (event) {
+  if (event.keyCode == 13) {
+    $(".searchBot").trigger("click");
+  }
+});
+
 var myScroll = new BScroll('#mainWrapper', {
   pullUpLoad: true,
   click: true,
@@ -33,7 +40,7 @@ $('.closeIconSearh').click(function () {
 });
 function search() {
   searchNum = 1;
-  document.getElementById('contentTo').innerHTML = "";
+  document.getElementById('contentTo').innerHTML = '';
   searchScroll.finishPullUp();
   searchScroll.refresh();
   var title = $('.searchcon').val();
