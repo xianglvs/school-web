@@ -18,7 +18,6 @@
 
     <body>
         <div class="articleDetail">
-            <div class="occupy">&nbsp;</div>
             <div class="nav-header">
                 <svg
                     t="1596432961087"
@@ -36,7 +35,10 @@
                 <div onclick="window.location.href='/'" class="logo" id="contentTitleTo">招考小站</div>
             </div>
             <div id="mainWrapper" class="wrapper">
-                <div class="artDetCon"><%- newsDetail.content %></div>
+                <div class="artDetCon">
+                    <div class="occupy">&nbsp;</div>
+                    <%- newsDetail.content %>
+                </div>
             </div>
         </div>
     </body>
