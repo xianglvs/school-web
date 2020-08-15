@@ -20,7 +20,6 @@
 </head>
 <body>
     <div class="main">
-    <div class="occupy">&nbsp;</div>
     <div class="article"  id="article">
         <div class="nav-header">
             <a href="tel:18083028759">
@@ -30,83 +29,86 @@
             <svg t="1596421475458" class="iconrig iconSearch" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3005"><path d="M240.776 240.872A302.952 302.952 0 0 0 157.328 512c18.048-81.912 60.48-161.952 126.576-228.096C350.048 217.736 430.088 175.328 512 157.28c-95.28-17.952-197.52 9.864-271.224 83.592z" p-id="3006"></path><path d="M959.6 802.736l-114.096-114.096a110.64 110.64 0 0 0-87-31.992c107.304-155.208 91.8-369.744-46.392-507.96-155.568-155.616-407.856-155.616-563.472 0-155.568 155.616-155.568 407.928 0 563.544 138.192 138.216 352.56 153.6 507.864 46.296-2.4 31.2 8.304 63.312 31.992 87l114.096 114.12c43.2 43.104 113.784 43.104 156.888 0 43.32-43.104 43.32-113.712 0.12-156.912zM665.84 665.84c-130.008 130.008-340.68 130.008-470.64 0-130.008-130.008-130.008-340.728 0-470.736 129.96-130.008 340.632-130.008 470.64 0 129.984 129.912 129.984 340.728 0 470.736z" p-id="3007"></path></svg>        
         </div>
         <div id="mainWrapper" class="wrapper">
-        <div class="articleItems" id="articleItems">
-          <% 
-          var newsList=JSON.parse(newsList||[]);
-          newsList.forEach(function(item){ %>
+        <div>
+            <div class="occupy">&nbsp;</div>
+            <div class="articleItems" id="articleItems">
             <% 
-            var listImage=[];
-            if(item.listImage){
-                listImage=(item.listImage).split(",");
-            }
-            %>
-            <a href="/article/detail?id=<%= item.id%>">
-            <% if(item.listType == "0"){ %>
-            <div class="articleItem">
-              <div class="name"><%= item.title%> </div>
-              <div class="content"><%= item.description%></div>
-              <!-- <div class="time"><%= item.updateDate%></div> -->
-           </div>
-           <% } else if(item.listType == "1"){ %>
-           <div class="articleItem articleType1">
-               <div class="lef">
-                    <div class="title"><%= item.title%> </div>
-                    <!-- <div class="time"><%= item.updateDate%></div> -->
-               </div><div class="rig">
-                   <%if(!listImage[0].startsWith("http")){%>
-                    <img src="<%= listImage[0] + '!m600x400.png' %>" />
-                   <%}else{%>
-                    <img src="<%= listImage[0] %>" />
-                   <%}%>
-                   </div>
+            var newsList=JSON.parse(newsList||[]);
+            newsList.forEach(function(item){ %>
+                <% 
+                var listImage=[];
+                if(item.listImage){
+                    listImage=(item.listImage).split(",");
+                }
+                %>
+                <a href="/article/detail?id=<%= item.id%>">
+                <% if(item.listType == "0"){ %>
+                <div class="articleItem">
+                <div class="name"><%= item.title%> </div>
+                <div class="content"><%= item.description%></div>
+                <!-- <div class="time"><%= item.updateDate%></div> -->
             </div>
-            <% } else if(item.listType == "2"){ %>
-            <div class="articleItem articleType2">
-                    <div class="title"><%= item.title%> </div>
-                    <div class="pic">
-                        <%if(!listImage[0].startsWith("http")){%>
-                        <img src="<%= listImage[0] + '!m750x325.png' %>" />
-                        <%}else{%>
-                        <img src="<%= listImage[0]%>" />
-                        <%}%>
-                    </div>
-            </div>
-            <% } else if(item.listType == "3"){ %>
-            <div class="articleItem articleType3">
-                    <div class="pic">
-                        <%if(!listImage[0].startsWith("http")){%>
-                        <img src="<%= listImage[0] + '!m750x325.png' %>" />
-                        <%}else{%>
-                        <img src="<%= listImage[0]%>" />
-                        <%}%>
+            <% } else if(item.listType == "1"){ %>
+            <div class="articleItem articleType1">
+                <div class="lef">
                         <div class="title"><%= item.title%> </div>
+                        <!-- <div class="time"><%= item.updateDate%></div> -->
+                </div><div class="rig">
+                    <%if(!listImage[0].startsWith("http")){%>
+                        <img src="<%= listImage[0] + '!m600x400.png' %>" />
+                    <%}else{%>
+                        <img src="<%= listImage[0] %>" />
+                    <%}%>
                     </div>
-            </div>
-            <% } else if(item.listType == "4"){ %>
-            <div class="articleItem articleType4">
-                    <div class="title"><%= item.title%> </div>
-                    <div class="pic">
-                        <% for(let i = 0; i < 3 ;i++){%>
-                        <%let img = listImage[i]%>
-                            <% if(i < 2){ %>
-                            <%if(!img.startsWith("http")){%>
-                            <img style="width: 32.7%;margin-right: 1%" src="<%= img %>!m500x350.png" />
+                </div>
+                <% } else if(item.listType == "2"){ %>
+                <div class="articleItem articleType2">
+                        <div class="title"><%= item.title%> </div>
+                        <div class="pic">
+                            <%if(!listImage[0].startsWith("http")){%>
+                            <img src="<%= listImage[0] + '!m750x325.png' %>" />
                             <%}else{%>
-                            <img style="width: 32.7%;margin-right: 1%" src="<%= img %>" />
+                            <img src="<%= listImage[0]%>" />
                             <%}%>
-                            <% } else { %>
-                            <%if(!img.startsWith("http")){%>
-                            <img style="width: 32.6%;" src="<%= img %>!m500x350.png" />
+                        </div>
+                </div>
+                <% } else if(item.listType == "3"){ %>
+                <div class="articleItem articleType3">
+                        <div class="pic">
+                            <%if(!listImage[0].startsWith("http")){%>
+                            <img src="<%= listImage[0] + '!m750x325.png' %>" />
                             <%}else{%>
-                            <img style="width: 32.6%;" src="<%= img %>" />
+                            <img src="<%= listImage[0]%>" />
+                            <%}%>
+                            <div class="title"><%= item.title%> </div>
+                        </div>
+                </div>
+                <% } else if(item.listType == "4"){ %>
+                <div class="articleItem articleType4">
+                        <div class="title"><%= item.title%> </div>
+                        <div class="pic">
+                            <% for(let i = 0; i < 3 ;i++){%>
+                            <%let img = listImage[i]%>
+                                <% if(i < 2){ %>
+                                <%if(!img.startsWith("http")){%>
+                                <img style="width: 32.7%;margin-right: 1%" src="<%= img %>!m500x350.png" />
+                                <%}else{%>
+                                <img style="width: 32.7%;margin-right: 1%" src="<%= img %>" />
+                                <%}%>
+                                <% } else { %>
+                                <%if(!img.startsWith("http")){%>
+                                <img style="width: 32.6%;" src="<%= img %>!m500x350.png" />
+                                <%}else{%>
+                                <img style="width: 32.6%;" src="<%= img %>" />
+                                <% } %>
+                                <% } %>
                             <% } %>
-                            <% } %>
-                        <% } %>
-                    </div>
+                        </div>
+                </div>
+                <% } %>
+                </a>
+                <% }); %>
             </div>
-            <% } %>
-            </a>
-            <% }); %>
         </div>
         </div>
     </div>
@@ -116,6 +118,7 @@
             <div class="logo" id="contentTitleTo">搜你想看</div>
         </div>
         <form action=".">
+            <div class="occupy">&nbsp;</div>
             <div class="articleSearch">
                 <input type="search" class="searchcon" placeholder="搜你想看"/>
                 <input type="text" style="display:none;"/>
@@ -125,7 +128,11 @@
             </div>
         </form>
         <div id="searchWrapper" class="wrapper">
-            <div class="articleItems" id="contentTo">
+            <div>
+                <div class="occupy1">&nbsp;</div>
+                <div class="occupy1">&nbsp;</div>
+                <div class="articleItems" id="contentTo">
+                </div>
             </div>
         </div>
     </div>

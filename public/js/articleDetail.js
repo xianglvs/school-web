@@ -1,6 +1,12 @@
-$('.closeIconSearh').click(function () {
-  window.history.go(-1);
+$('.closeIconSearh').click(() => {
+    window.history.go(-1);
 });
-var scroll = new BScroll('#mainWrapper', {
-  click: true,
+window.addEventListener('DOMContentLoaded', (event) => {
+    var scroll = new BScroll('#mainWrapper', {
+        click: true,
+        scrollY: true,
+        pullUpLoad: false,
+        mouseWheel: true,
+        scrollbar: true,
+    });
 });

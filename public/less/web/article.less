@@ -1,9 +1,13 @@
 @width: 640px;
-
+html,body{
+    height:100%;
+}
 .main {
     max-width: @width;
     min-height: 500px;
     margin: 0 auto;
+    position: relative;
+    height:100%;
 }
 
 h1,
@@ -20,8 +24,13 @@ h6 {
 }
 
 .wrapper {
-    margin-top: 1vh;
-    height: 90vh;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+    -webkit-overflow-scrolling:touch;
+    top:0;
+    left:0;
     overflow: hidden;
 }
 .wrapper a {
@@ -33,10 +42,21 @@ h6 {
     height: 40px;
     @media screen and (min-height: 650px) {
         font-size: 20px;
+        height: 9vh;
+        line-height: 9vh;
+    }
+}
+
+.occupy1 {
+    width: 100%;
+    height: 40px;
+    @media screen and (min-height: 650px) {
+        font-size: 20px;
         height: 8vh;
         line-height: 8vh;
     }
 }
+
 .article .nav-header {
     width: 100%;
     max-width: @width;
@@ -105,9 +125,17 @@ h6 {
     }
 }
 
+.article form{
+    width: 100%;
+    position: absolute;
+    background-color: #FFF;
+    z-index: 991;
+    top:0;
+    left:0;
+}
+
 .article .articleSearch {
     margin: 0 2vw;
-    margin-top: 1vh;
     height: 6vh;
     min-height: 40px;
     border: 1px solid #eb3d00;

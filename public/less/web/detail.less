@@ -1,12 +1,26 @@
 @width:640px;
+html,body{
+    height:100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
  .wrapper{
-     height:100vh;
+     height: 100%;
+     width: 100%;
+     position: relative;
+     top:0;
+     left:0;
+     z-index: 10;
+     -webkit-overflow-scrolling:touch;
      box-sizing: border-box;
      overflow: hidden;
  }
 .articleDetail{
     max-width: @width;
     margin:0 auto;
+    height: 100%;
 }
 
 .occupy {
@@ -73,6 +87,7 @@
     letter-spacing: 1px;
     padding:2vh 5vw;
     margin:0 auto;
+    box-sizing:border-box;
 }
 .articleDetail .artDetCon p {
     font-size: 18px;
