@@ -1,4 +1,5 @@
 @width:640px;
+@minHeight:500px;
 html,body{
     height:100%;
     width: 100%;
@@ -26,7 +27,7 @@ html,body{
 .occupy {
     width: 100%;
     height: 50px;
-    @media screen and (min-height: 650px) {
+    @media screen and (min-height: @minHeight) {
         font-size: 20px;
         height: 9vh;
         line-height: 9vh;
@@ -45,7 +46,7 @@ html,body{
     z-index: 999;
     color: #eb3d00;
     box-shadow: 0px 10px 10px -10px #ccc;
-    @media screen and (min-height: 650px) {
+    @media screen and (min-height: @minHeight) {
         font-size: 20px;
         height: 8vh;
         line-height: 8vh;
@@ -63,7 +64,7 @@ html,body{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    @media screen and (min-height: 650px) {
+    @media screen and (min-height: @minHeight) {
         font-size: 20px;
         height: 8vh;
         line-height: 8vh;
@@ -85,9 +86,12 @@ html,body{
 .articleDetail .artDetCon {
     max-width: 600px;
     letter-spacing: 1px;
-    padding:2vh 5vw;
+    padding:2vh 4vw;
     margin:0 auto;
     box-sizing:border-box;
+    @media screen and (min-width: 450px) {
+        padding:2vh 20px;
+    }
 }
 .articleDetail .artDetCon p {
     font-size: 18px;
