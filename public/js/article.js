@@ -6,6 +6,7 @@ template.defaults.imports.splitImages = function (imgsStr) {
     template.defaults.imports.imgs = imgs;
 };
 window.addEventListener('DOMContentLoaded', (event) => {
+    var searchKey = '';
     $(document).keydown(function (event) {
         if (event.keyCode == 13) {
             $('.searchBot').trigger('click');
@@ -50,6 +51,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         searchScroll.finishPullUp();
         searchScroll.refresh();
         var title = $('.searchcon').val();
+        searchKey = title;
         $.get('/web/api/article/list', { title: title, pageSize: 10 }, function (result) {
             if (result.code == 0) {
                 document.getElementById('contentTo').innerHTML = template('content', result.data);
@@ -65,7 +67,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     window.search = search;
     searchScroll.on('pullingUp', () => {
         searchNum++;
-        var params = {};
+        var params = {
+            title:searchKey
+        };
         params.pageSize = 10;
         params.pageNum = searchNum;
         $.get('/web/api/article/list', params, function (result) {
@@ -80,7 +84,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     myScroll.on('pullingUp', () => {
         pageNum++;
-        var params = {};
+        var params = {
+            title:searchKey
+        };
         params.pageSize = 10;
         params.pageNum = pageNum;
         $.get('/web/api/article/list', params, function (result) {
