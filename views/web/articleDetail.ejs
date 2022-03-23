@@ -10,7 +10,7 @@
             content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
         />
         <title><%=newsDetail.title %></title>
-        <% include ../webTemplate/commonCss.ejs %> 
+        <% include ../webTemplate/commonCss.ejs %>
         <% include ../webTemplate/commonJs.ejs %>
         <link href="<%=resUrl%>/css/web/detail.css" rel="stylesheet" type="text/css" />
         <script src="<%=resUrl%>/lib/better-scroll.min.js"></script>
@@ -32,7 +32,7 @@
                         p-id="2607"
                     ></path>
                 </svg>
-                <div onclick="window.location.href='/'" class="logo" id="contentTitleTo">招考小站</div>
+                <div onclick="window.location.href='/'" class="logo" id="contentTitleTo"><%=home.title%></div>
             </div>
             <div id="mainWrapper" class="wrapper">
                 <div class="artDetCon">

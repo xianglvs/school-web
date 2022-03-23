@@ -20,14 +20,17 @@ module.exports = function (app) {
     });
 
     app.get(`${namespace.root}/article/detail`, async function (req, res) {
-        let result = await http.get(`/api/article/` + req.query.id, {}).catch(e => {
+        try {
+            let [result, index] = await Promise.all([http.get(`/api/article/` + req.query.id, {}), http.get(`/api/home`, {})]);
+            res.render('web/articleDetail', {
+                newsDetail: result.data,
+                home:index.data
+            });
+        } catch (e) {
             res.send({
                 errCode: 401
             });
-        });
-        res.render('web/articleDetail', {
-            newsDetail: result.data
-        });
+        }
     });
 
 
