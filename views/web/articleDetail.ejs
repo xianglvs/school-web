@@ -19,6 +19,7 @@
     <body>
         <div class="articleDetail">
             <div class="nav-header">
+                <%if(!preview){%>
                 <svg
                     t="1596432961087"
                     class="iconlef closeIconSearh"
@@ -32,6 +33,7 @@
                         p-id="2607"
                     ></path>
                 </svg>
+                <%}%>
                 <div onclick="window.location.href='/'" class="logo" id="contentTitleTo"><%=home.title%></div>
             </div>
             <div id="mainWrapper" class="wrapper">
