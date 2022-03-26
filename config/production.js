@@ -35,7 +35,7 @@ module.exports = {
     'replaceConsole': true
   },
   server: {
-    port: 80 // 项目监听端口
+    port: 8080 // 项目监听端口
   },
   less: {
     globalVars: {
@@ -45,7 +45,7 @@ module.exports = {
   resUrl: '', // 当前项目访问路径,空白表示项目相对地址
   proxy: {
     '/web': { // 后端接口服务器
-      target: 'http://120.78.133.215:9998', // 要代理的地址
+      target: 'http://127.0.0.1:9998', // 要代理的地址
       pathRewrite: { // 拦截到的地址重写为
         '^/web': '/'
       },
