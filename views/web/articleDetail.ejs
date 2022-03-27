@@ -19,7 +19,7 @@
     <body>
         <div class="articleDetail">
             <div class="nav-header">
-                <%if(!preview){%>
+                <%if(typeof preview == 'undefined' || !preview){%>
                 <svg
                     t="1596432961087"
                     class="iconlef closeIconSearh"
