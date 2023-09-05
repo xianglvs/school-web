@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         searchScroll.refresh();
         var title = $('.searchcon').val();
         searchKey = title;
-        $.get('/web/api/article/list', { title: title, pageSize: 10 }, function (result) {
+        $.get('/web/api/article/list', { title: title,disableFlag:false, pageSize: 10 }, function (result) {
             if (result.code == 0) {
                 document.getElementById('contentTo').innerHTML = template('content', result.data);
             }
@@ -68,7 +68,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     searchScroll.on('pullingUp', () => {
         searchNum++;
         var params = {
-            title:searchKey
+            title:searchKey,
+            disableFlag: false
         };
         params.pageSize = 10;
         params.pageNum = searchNum;
@@ -85,7 +86,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     myScroll.on('pullingUp', () => {
         pageNum++;
         var params = {
-            title:searchKey
+            title:searchKey,
+            disableFlag: false
         };
         params.pageSize = 10;
         params.pageNum = pageNum;

@@ -6,7 +6,8 @@ module.exports = function (app) {
     app.get(`${namespace.root}/`, async function (req, res) {
         try {
             let [list, index] = await Promise.all([http.get(`/api/article/list`, {
-                pageSize: 10
+                pageSize: 10,
+                disableFlag: false
             }), http.get(`/api/home`, {})]);
             res.render('web/article', {
                 newsList: JSON.stringify(list.data.list || []),
